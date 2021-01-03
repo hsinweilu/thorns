@@ -168,7 +168,7 @@ def ramped_tone(
         s = set_dbspl(s, dbspl)
 
     if ramp != 0:
-        ramp_signal = np.linspace(0, 1, np.ceil(ramp * fs))
+        ramp_signal = np.linspace(0, 1, int(np.ceil(ramp * fs)))
         s[0:len(ramp_signal)] = s[0:len(ramp_signal)] * ramp_signal
         s[-len(ramp_signal):] = s[-len(ramp_signal):] * ramp_signal[::-1]
 
@@ -408,7 +408,7 @@ def amplitude_modulated_tone(
         s = set_dbspl(s, dbspl)
 
     if ramp != 0:
-        ramp_signal = np.linspace(0, 1, np.ceil(ramp * fs))
+        ramp_signal = np.linspace(0, 1, int(np.ceil(ramp * fs)))
         s[0:len(ramp_signal)] = s[0:len(ramp_signal)] * ramp_signal
         s[-len(ramp_signal):] = s[-len(ramp_signal):] * ramp_signal[::-1]
 
